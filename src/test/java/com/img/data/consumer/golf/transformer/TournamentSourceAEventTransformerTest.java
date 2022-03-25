@@ -43,8 +43,8 @@ class TournamentSourceAEventTransformerTest {
         assertThat(result.getCourse(), is(course));
         assertThat(result.getCountryCode(), is(countryCode));
         assertThat(result.getForecast(), is(forecast));
-        assertThat(result.getStartDate(), is(startDate));
-        assertThat(result.getEndDate(), is(endDate));
+        assertThat(result.getStartDate(), is("2022-08-09"));
+        assertThat(result.getEndDate(), is("2022-08-16"));
         assertThat(result.getRoundCount(), is(round));
     }
 }

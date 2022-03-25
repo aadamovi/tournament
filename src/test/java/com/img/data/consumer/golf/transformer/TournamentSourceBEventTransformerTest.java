@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,8 +23,10 @@ class TournamentSourceBEventTransformerTest {
         final String course = "Fine course";
         final String countryCode = "GB";
         final String playerCount = "1";
-        final String epochStart = "123456";
-        final String epochFinish = "123457";
+        final Instant epochStart = Instant.now();
+        final Instant epochFinish = Instant.now().plusSeconds(36000L);
+        final String startDate = toLocalDateString(epochStart.toEpochMilli());
+        final String endDate = toLocalDateString(epochFinish.toEpochMilli());
         final String round = "6";
 
         final Map<String, Object> input = new HashMap<>();
@@ -31,8 +35,8 @@ class TournamentSourceBEventTransformerTest {
         input.put("golfCourse", course);
         input.put("hostCountry", countryCode);
         input.put("playerCount", playerCount);
-        input.put("epochStart", epochStart);
-        input.put("epochFinish", epochFinish);
+        input.put("epochStart", String.valueOf(epochStart.toEpochMilli()));
+        input.put("epochFinish", String.valueOf(epochFinish.toEpochMilli()));
         input.put("rounds", round);
 
         final TournamentSourceBEventTransformer transformer = new TournamentSourceBEventTransformer();
@@ -43,8 +47,13 @@ class TournamentSourceBEventTransformerTest {
         assertThat(result.getCourse(), is(course));
         assertThat(result.getCountryCode(), is(countryCode));
         assertThat(result.getPlayerCount(), is(playerCount));
-        assertThat(result.getStartMillis(), is(epochStart));
-        assertThat(result.getEndMillis(), is(epochFinish));
+        assertThat(result.getStartDate(), is(startDate));
+        assertThat(result.getEndDate(), is(endDate));
         assertThat(result.getRoundCount(), is(round));
+    }
+
+    private String toLocalDateString(long millis) {
+        final LocalDateTime localDateTime = LocalDateTime.ofInstant(Instant.ofEpochSecond((millis)), ZoneId.systemDefault());
+        return localDateTime.toLocalDate().format(DateTimeFormatter.ISO_DATE);
     }
 }

@@ -14,8 +14,6 @@ public class TournamentEvent {
     private String countryCode;
     private String startDate;
     private String endDate;
-    private String startMillis;
-    private String endMillis;
     private String roundCount;
     private String playerCount;
     private String forecast;
@@ -68,22 +66,6 @@ public class TournamentEvent {
         this.endDate = endDate;
     }
 
-    public String getStartMillis() {
-        return startMillis;
-    }
-
-    public void setStartMillis(String startMillis) {
-        this.startMillis = startMillis;
-    }
-
-    public String getEndMillis() {
-        return endMillis;
-    }
-
-    public void setEndMillis(String endMillis) {
-        this.endMillis = endMillis;
-    }
-
     public String getRoundCount() {
         return roundCount;
     }
@@ -119,8 +101,6 @@ public class TournamentEvent {
             Objects.equals(countryCode, that.countryCode) &&
             Objects.equals(startDate, that.startDate) &&
             Objects.equals(endDate, that.endDate) &&
-            Objects.equals(startMillis, that.startMillis) &&
-            Objects.equals(endMillis, that.endMillis) &&
             Objects.equals(roundCount, that.roundCount) &&
             Objects.equals(playerCount, that.playerCount) &&
             Objects.equals(forecast, that.forecast);
@@ -128,6 +108,6 @@ public class TournamentEvent {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, course, countryCode, startDate, endDate, startMillis, endMillis, roundCount, playerCount, forecast);
+        return Objects.hash(id, name, course, countryCode, startDate, endDate, roundCount, playerCount, forecast);
     }
 }

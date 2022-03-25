@@ -15,8 +15,8 @@ public class TournamentSourceAEventTransformer implements Transformer {
         event.setName((String) incoming.get("tournamentName"));
         event.setCountryCode((String) incoming.get("countryCode"));
         event.setCourse((String) incoming.get("courseName"));
-        event.setStartDate((String) incoming.get("startDate"));
-        event.setEndDate((String) incoming.get("endDate"));
+        event.setStartDate(formatDateToIso((String) incoming.get("startDate")));
+        event.setEndDate(formatDateToIso((String) incoming.get("endDate")));
         event.setRoundCount((String) incoming.get("roundCount"));
         event.setForecast((String) incoming.get("forecast"));
         return event;

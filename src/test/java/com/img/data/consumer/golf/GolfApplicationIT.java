@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @AutoConfigureMockMvc
 @SpringBootTest
-class GolfApplicationTests extends AbstractTestContainer {
+class GolfApplicationIT extends AbstractTestContainer {
 
     @Autowired
     private MockMvc mockMvc;

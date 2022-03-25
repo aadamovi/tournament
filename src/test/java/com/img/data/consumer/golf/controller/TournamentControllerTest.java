@@ -41,7 +41,9 @@ class TournamentControllerTest {
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content("{\n" +
                     "\t\"tournamentId\": \"12345\",\n" +
-                    "\t\"tournamentName\": \"scotland open\"\n" +
+                    "\t\"tournamentName\": \"scotland open\",\n" +
+                    "\t\"startDate\": \"13/12/21\",\n" +
+                    "\t\"endDate\": \"13/01/21\"\n" +
                     "}"))
             .andDo(print())
             .andExpect(status().isOk())
