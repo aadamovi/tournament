@@ -1,4 +1,4 @@
-package com.img.data.consumer.golf.transformer;
+package com.img.data.consumer.golf.domain;
 
 import java.time.Instant;
 import java.time.LocalDate;

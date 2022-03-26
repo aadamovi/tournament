@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.util.Locale;
 import java.util.Map;
 
-import static com.img.data.consumer.golf.transformer.IsoLocalDateConverter.FORMAT_SLASH_DELIMITED_DATE_TO_ISO;
+import static com.img.data.consumer.golf.domain.IsoLocalDateConverter.FORMAT_SLASH_DELIMITED_DATE_TO_ISO;
 import static java.util.Locale.ENGLISH;
 
 @Component

@@ -63,6 +63,7 @@ class GolfApplicationIT extends AbstractTestContainer {
             .andExpect(status().isOk())
             .andReturn();
         final TournamentEvent actual = new ObjectMapper().readValue(mvcResult.getResponse().getContentAsString(), TournamentEvent.class);
+        actual.setSource("sourceA");
         final Optional<TournamentEvent> saved = repository.findById("174638");
         saved.ifPresentOrElse(
             value -> assertThat(actual, is(value)),

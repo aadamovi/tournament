@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-import static com.img.data.consumer.golf.transformer.IsoLocalDateConverter.EPOCH_TO_LOCAL_DATE_IN_ISO;
+import static com.img.data.consumer.golf.domain.IsoLocalDateConverter.EPOCH_TO_LOCAL_DATE_IN_ISO;
 
 @Component
 public class TournamentSourceBEventTransformer implements Transformer {

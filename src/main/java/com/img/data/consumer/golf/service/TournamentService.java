@@ -21,6 +21,7 @@ public class TournamentService {
 
     public TournamentEvent handle(String source, Map<String, Object> event) {
         final TournamentEvent tournamentEvent = transformerFactory.getTransformer(source).transform(event);
+        tournamentEvent.setSource(source);
         return tournamentRepository.save(tournamentEvent);
     }
 
