@@ -45,7 +45,7 @@ class TournamentSourceBEventTransformerTest {
         assertThat(result.getId(), is(id));
         assertThat(result.getName(), is(name));
         assertThat(result.getCourse(), is(course));
-        assertThat(result.getCountryCode(), is(countryCode));
+        assertThat(result.getHostCountry(), is(countryCode));
         assertThat(result.getPlayerCount(), is(playerCount));
         assertThat(result.getStartDate(), is(startDate));
         assertThat(result.getEndDate(), is(endDate));

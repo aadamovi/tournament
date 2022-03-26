@@ -15,7 +15,7 @@ public class TournamentSourceBEventTransformer implements Transformer {
         event.setId((String) incoming.get("tournamentUUID"));
         event.setCourse((String) incoming.get("golfCourse"));
         event.setName((String) incoming.get("competitionName"));
-        event.setCountryCode((String) incoming.get("hostCountry"));
+        event.setHostCountry((String) incoming.get("hostCountry"));
         event.setStartDate(EPOCH_TO_LOCAL_DATE_IN_ISO.getConverter().apply((String) incoming.get("epochStart")));
         event.setEndDate(EPOCH_TO_LOCAL_DATE_IN_ISO.getConverter().apply((String) incoming.get("epochFinish")));
         event.setRoundCount((String) incoming.get("rounds"));

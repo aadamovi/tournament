@@ -43,7 +43,8 @@ class TournamentControllerTest {
                     "\t\"tournamentId\": \"12345\",\n" +
                     "\t\"tournamentName\": \"scotland open\",\n" +
                     "\t\"startDate\": \"13/12/21\",\n" +
-                    "\t\"endDate\": \"13/01/21\"\n" +
+                    "\t\"endDate\": \"13/01/21\",\n" +
+                    "\t\"countryCode\": \"GB\"\n" +
                     "}"))
             .andDo(print())
             .andExpect(status().isOk())

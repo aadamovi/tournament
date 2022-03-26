@@ -9,9 +9,10 @@ import java.util.Objects;
 public class TournamentEvent {
     @Id
     private String id;
+    private String source;
     private String name;
     private String course;
-    private String countryCode;
+    private String hostCountry;
     private String startDate;
     private String endDate;
     private String roundCount;
@@ -42,12 +43,12 @@ public class TournamentEvent {
         this.course = course;
     }
 
-    public String getCountryCode() {
-        return countryCode;
+    public String getHostCountry() {
+        return hostCountry;
     }
 
-    public void setCountryCode(String countryCode) {
-        this.countryCode = countryCode;
+    public void setHostCountry(String hostCountry) {
+        this.hostCountry = hostCountry;
     }
 
     public String getStartDate() {
@@ -98,7 +99,7 @@ public class TournamentEvent {
         return Objects.equals(id, that.id) &&
             Objects.equals(name, that.name) &&
             Objects.equals(course, that.course) &&
-            Objects.equals(countryCode, that.countryCode) &&
+            Objects.equals(hostCountry, that.hostCountry) &&
             Objects.equals(startDate, that.startDate) &&
             Objects.equals(endDate, that.endDate) &&
             Objects.equals(roundCount, that.roundCount) &&
@@ -108,6 +109,14 @@ public class TournamentEvent {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, course, countryCode, startDate, endDate, roundCount, playerCount, forecast);
+        return Objects.hash(id, name, course, hostCountry, startDate, endDate, roundCount, playerCount, forecast);
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
     }
 }

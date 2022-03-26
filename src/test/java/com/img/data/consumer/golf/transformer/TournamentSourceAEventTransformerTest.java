@@ -41,7 +41,7 @@ class TournamentSourceAEventTransformerTest {
         assertThat(result.getId(), is(id));
         assertThat(result.getName(), is(name));
         assertThat(result.getCourse(), is(course));
-        assertThat(result.getCountryCode(), is(countryCode));
+        assertThat(result.getHostCountry(), is("United Kingdom"));
         assertThat(result.getForecast(), is(forecast));
         assertThat(result.getStartDate(), is("2022-08-09"));
         assertThat(result.getEndDate(), is("2022-08-16"));

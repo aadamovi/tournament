@@ -18,6 +18,7 @@ public class SourceACommonTestData {
         input.put("tournamentName", NAME);
         input.put("startDate", START_DATE);
         input.put("endDate", END_DATE);
+        input.put("countryCode", "GB");
 
         return input;
     };
