@@ -1,0 +1,43 @@
+{
+	"info": {
+		"_postman_id": "2eee713a-f93d-4e2f-b05b-79e282e24958",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SourceATournamentRequest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "source",
+						"value": "sourceA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"tournamentId\": \"174638\",\r\n\t\"tournamentName\": \"Women's Open Championship\",\r\n\t\"forecast\": \"fair\",\r\n\t\"courseName\": \"Sunnydale Golf Course\",\r\n\t\"countryCode\": \"GB\",\r\n\t\"startDate\": \"09/08/22\",\r\n\t\"endDate\": \"13/08/22\",\r\n\t\"roundCount\": \"4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/tournament",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tournament"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
