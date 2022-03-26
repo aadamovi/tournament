@@ -5,7 +5,7 @@ Application accepts events from sourceA and sourceB with corresponding payload s
 Application stores the data in CouchbaseDB. Therefore, prior to starting the application CouchbaseDB instance needs 
 to be started and configured to have a `tournament` bucket to store the documents.
 
-Run `mvn clean install ` to make sure the tests pass and project is built.
+Run `mvn clean install ` to make sure the tests pass and project is built correctly.
 Application can be run in Intellij IDE via the standard Run option or using the springboot maven plugin.
 For example using `mvn spring-boot:run`
 
