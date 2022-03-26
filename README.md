@@ -22,6 +22,6 @@ structure.
 An example of a test session is stored in the code base as `test.postman_collection.json`. 
 This can be exported into Postman tool and use to trigger POST requests.
  
-Code also contains an integration test that is written using the Testcontainers and startsup an instance of CouchbaseDb.
+Code also contains an integration test that is written using the Testcontainers and starts up an instance of CouchbaseDb.
 Therefore, that can be used instead of starting up the actual application with CouchbaseDb.
 
