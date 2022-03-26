@@ -5,11 +5,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.time.*;
-import java.time.format.DateTimeFormatter;
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.img.data.consumer.golf.transformer.IsoLocalDateConverter.EPOCH_TO_LOCAL_DATE_IN_ISO;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
@@ -25,8 +25,8 @@ class TournamentSourceBEventTransformerTest {
         final String playerCount = "1";
         final Instant epochStart = Instant.now();
         final Instant epochFinish = Instant.now().plusSeconds(36000L);
-        final String startDate = toLocalDateString(epochStart.toEpochMilli());
-        final String endDate = toLocalDateString(epochFinish.toEpochMilli());
+        final String startDate = EPOCH_TO_LOCAL_DATE_IN_ISO.getConverter().apply(String.valueOf(epochStart.toEpochMilli()));
+        final String endDate = EPOCH_TO_LOCAL_DATE_IN_ISO.getConverter().apply(String.valueOf(epochFinish.toEpochMilli()));
         final String round = "6";
 
         final Map<String, Object> input = new HashMap<>();
@@ -50,10 +50,5 @@ class TournamentSourceBEventTransformerTest {
         assertThat(result.getStartDate(), is(startDate));
         assertThat(result.getEndDate(), is(endDate));
         assertThat(result.getRoundCount(), is(round));
-    }
-
-    private String toLocalDateString(long millis) {
-        final LocalDateTime localDateTime = LocalDateTime.ofInstant(Instant.ofEpochSecond((millis)), ZoneId.systemDefault());
-        return localDateTime.toLocalDate().format(DateTimeFormatter.ISO_DATE);
     }
 }
